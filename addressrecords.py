@@ -116,8 +116,8 @@ class Record():
         #return  f'Name: {self.name.value}, birthday: {birthday},  phones: {phones}'    
         return "Name: {:<10}| Birthday: {:<12}| Phones: {:<12}".format(self.name.value, birthday, phones)
         
-    def add_birthday(self, date):
-        self.birthday = Birthday(date)
+    def add_birthday(self, date: Birthday):
+        self.birthday = date
         return  
 
     def days_to_birthday(self):

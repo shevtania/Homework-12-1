@@ -41,9 +41,9 @@ def add_phone(*args):
 def del_phone(*args):
     name, phone = args
     record = address_book.search_record(name)
-    if  not address_book.search_record(name):
+    if  not record:
         return "This phone cann't be deleted, contact doesn't exist."
-    record = address_book.search_record(name)
+    
     result = record.del_phone(Phone(phone))
     
     return result
@@ -105,7 +105,7 @@ def search_by_symbols(symbols):
 def add_birthday(*args):
     name, date = args
     record = address_book.search_record(name)
-    record.add_birthday(date)
+    record.add_birthday(Birthday(date))
     return f'Added {date} in contact: {name}'
 
 @input_error
